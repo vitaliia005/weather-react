@@ -50,7 +50,7 @@ export default function Weather(props) {
       </form>
       <a
         class="link"
-        href="http://github.com/vitaliia005/"
+        href="https://github.com/vitaliia005/weather-react"
         target="_blank"
         rel="noreferrer"
       >
