@@ -2,17 +2,13 @@ import "./App.css";
 
 import Weather from "./Weather";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          <h1>Weather Application</h1>
-          <Weather />
-        </p>
-      </header>
+      <div className="container">
+        <h1>Weather Application</h1>
+        <Weather />
+      </div>
     </div>
   );
 }
-
-export default App;
