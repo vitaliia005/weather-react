@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./Weather.css";
 
 export default function Weather(props) {
   let [city, setCity] = useState("");
@@ -14,11 +15,28 @@ export default function Weather(props) {
     event.preventDefault();
     if (temperature) {
       setMessage(
-        `Here are the weather details for ${city}:
-         Temperature: ${temperature}°C
-         Humidity: ${humidity}%
-         Description: ${description}
-         Wind: ${wind}km/h`
+        <div>
+          <h1>{city}</h1>
+          <p>{description}</p>
+          <div className="row">
+            <div className="col-6">
+              <img
+                src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png"
+                alt="cloudy"
+              ></img>
+
+              <ul>
+                <li>{temperature}°C</li>
+              </ul>
+            </div>
+            <div className="col-6">
+              <ul>
+                <li>Humidity: {humidity}%</li>
+                <li>Wind: {wind}km/h</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       );
     } else {
       setMessage(`Please type a city in a search field.`);
@@ -44,9 +62,21 @@ export default function Weather(props) {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <input type="search" placeholder="Type a query" onChange={updateCity} />
-        <input type="submit" value="Submit" />
-        <div>{message}</div>
+        <div className="row">
+          <div className="col-9">
+            <input
+              type="search"
+              placeholder="Enter a city..."
+              onChange={updateCity}
+              className="form-control"
+            />
+          </div>
+          <div className="col-3">
+            <input type="submit" value="Search" className="btn btn-primary" />
+          </div>
+
+          <div>{message}</div>
+        </div>
       </form>
       <a
         class="link"
