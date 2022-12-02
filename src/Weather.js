@@ -15,28 +15,30 @@ export default function Weather(props) {
     event.preventDefault();
     if (temperature) {
       setMessage(
-        <div>
-          <h1>{city}</h1>
-          <p>{description}</p>
-          <div className="row">
-            <div className="col-6">
-              <img
-                src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png"
-                alt="cloudy"
-              ></img>
+        <body>
+          <div className="weather-today">
+            <h1>{city}</h1>
+            <p>{description}</p>
+            <div className="row">
+              <div className="col-6">
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png"
+                  alt="cloudy"
+                ></img>
 
-              <ul>
-                <li>{temperature}°C</li>
-              </ul>
-            </div>
-            <div className="col-6">
-              <ul>
-                <li>Humidity: {humidity}%</li>
-                <li>Wind: {wind}km/h</li>
-              </ul>
+                <ul>
+                  <li>{temperature}°C</li>
+                </ul>
+              </div>
+              <div className="col-6">
+                <ul>
+                  <li>Humidity: {humidity}%</li>
+                  <li>Wind: {wind}km/h</li>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
+        </body>
       );
     } else {
       setMessage(`Please type a city in a search field.`);
@@ -60,7 +62,7 @@ export default function Weather(props) {
   axios.get(apiUrl).then(showWeatherDetails);
 
   return (
-    <div>
+    <div className="form">
       <form onSubmit={handleSubmit}>
         <div className="row">
           <div className="col-9">
@@ -72,7 +74,11 @@ export default function Weather(props) {
             />
           </div>
           <div className="col-3">
-            <input type="submit" value="Search" className="btn btn-primary" />
+            <input
+              type="submit"
+              value="Search"
+              className="btn btn-primary w-100"
+            />
           </div>
 
           <div>{message}</div>

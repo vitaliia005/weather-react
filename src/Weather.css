@@ -1,3 +1,11 @@
-.Weather li {
+.Weather {
+  border: 1px solid #66746a;
+  border-radius: 4px;
+}
+
+.Weather ul,
+li {
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
