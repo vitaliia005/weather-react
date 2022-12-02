@@ -1,6 +1,5 @@
 .Weather {
-  border: 1px solid #66746a;
-  border-radius: 4px;
+  background-color: rgb(168, 131, 223);
 }
 
 .Weather ul,
@@ -8,4 +7,20 @@ li {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+a {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  margin: 5px;
+}
+
+a:hover {
+  color: rgb(59, 22, 94);
+  margin: 5px;
+}
+
+form {
+  padding: 10px;
 }
