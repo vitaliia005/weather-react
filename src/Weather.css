@@ -1,7 +1,7 @@
 .WeatherData h1 {
   font-family: "Great Vibes", cursive;
   padding-left: 20px;
-  margin-top: 5px;
+  margin-top: 15px;
   color: white;
 }
 .WeatherData ul {
@@ -14,11 +14,12 @@
   list-style: none;
 }
 .Weather .btn {
+  margin-top: 20px;
   font-weight: bolder;
   background-color: #dbd3f9;
   color: white;
   border: 2px #f4b2f3;
-  box-shadow: 0 5px 10px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 5px 10px rgba(255, 255, 255, 0.815);
 }
 
 .Weather .btn:hover {
@@ -26,11 +27,12 @@
 }
 
 .Weather .form-control {
+  margin-top: 20px;
   font-weight: bolder;
   background-color: #dbd3f9;
   color: white;
   border: 2px #f4b2f3;
-  box-shadow: 0 5px 10px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 5px 10px rgba(255, 255, 255, 0.614);
 }
 
 .Weather ::placeholder {
