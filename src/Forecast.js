@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import FormattedDate from "./FormattedDate";
-import WeatherIcon from "./WeatherIcon";
 import ForecastDay from "./ForecastDay";
 import "./Forecast.css";
 import axios from "axios";
@@ -17,15 +15,20 @@ export default function Forecast(props) {
     return (
       <div className="Forecast">
         <div className="row">
-          <div className="col-2">
-            <ForecastDay data={forecast[0]} />
-          </div>
+          {forecast.map(function (dailyForecast, index) {
+            if (index < 6) {
+              return (
+                <div className="col-2" key="index">
+                  <ForecastDay data={dailyForecast} />{" "}
+                </div>
+              );
+            }
+          })}
         </div>
       </div>
     );
   } else {
     const apiKey = "ca62161fa9c037c12a181a9e71f2e8ab";
-    //const apiKey = "4f6e636etc17733b801df4o7b14ba35b";
 
     let lat = props.coordinates.lat;
     let lon = props.coordinates.lon;
