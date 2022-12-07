@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import FormattedDate from "./FormattedDate";
 import WeatherIcon from "./WeatherIcon";
+import ForecastDay from "./ForecastDay";
 import "./Forecast.css";
 import axios from "axios";
 
@@ -17,22 +18,15 @@ export default function Forecast(props) {
       <div className="Forecast">
         <div className="row">
           <div className="col-2">
-            <div className="forecast-day">{forecast[0].dt}</div>
-            <WeatherIcon code={forecast[0].weather[0].icon} size="32" />
-          </div>
-          <div className="forecast-temp">
-            <span className="min float-left">
-              {Math.round(forecast[0].temp.max)}°C{" "}
-            </span>
-            <span className="max float-right">
-              {Math.round(forecast[0].temp.min)}°C
-            </span>
+            <ForecastDay data={forecast[0]} />
           </div>
         </div>
       </div>
     );
   } else {
     const apiKey = "ca62161fa9c037c12a181a9e71f2e8ab";
+    //const apiKey = "4f6e636etc17733b801df4o7b14ba35b";
+
     let lat = props.coordinates.lat;
     let lon = props.coordinates.lon;
     let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
