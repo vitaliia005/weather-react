@@ -77,3 +77,26 @@
 a:hover {
   color: white;
 }
+
+.ForecastDay .forecast-day,
+.forecast-temp {
+  display: block;
+  margin: 0 auto;
+  padding-left: 0;
+}
+
+@media (max-width: 600px) {
+  .ForecastDay canvas,
+  .forecast-day {
+    display: block;
+    margin: 0 auto;
+    padding-left: 0;
+  }
+  .ForecastDay {
+    text-align: justify;
+  }
+  .forecast-day,
+  .forecast-temp {
+    font-size: larger;
+  }
+}

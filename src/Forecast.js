@@ -18,7 +18,7 @@ export default function Forecast(props) {
   }, [props.coordinates]);
 
   function load() {
-    const apiKey = "ca62161fa9c037c12a181a9e71f2e8ab";
+    const apiKey = "082d3d02ffdb12f2fd9b259e2ced1d0d";
     let lat = props.coordinates.lat;
     let lon = props.coordinates.lon;
     let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
@@ -35,7 +35,7 @@ export default function Forecast(props) {
           {forecast.map(function (dailyForecast, index) {
             if (index < 6) {
               return (
-                <div className="col-2" key="index">
+                <div className="col-sm-2" key="index">
                   <ForecastDay data={dailyForecast} />{" "}
                 </div>
               );
