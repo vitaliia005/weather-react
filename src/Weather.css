@@ -94,6 +94,7 @@ a:hover {
   }
   .ForecastDay {
     text-align: justify;
+    margin-bottom: 20px;
   }
   .forecast-day,
   .forecast-temp {
