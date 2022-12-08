@@ -83,6 +83,7 @@ a:hover {
   display: block;
   margin: 0 auto;
   padding-left: 0;
+  color: white;
 }
 
 @media (max-width: 600px) {
